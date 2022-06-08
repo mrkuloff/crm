@@ -1,5 +1,13 @@
 'use strict';
 
+const heading = document.querySelector('.crm__start-world');
+const filter = document.querySelector('.crm__filter');
+const id = document.querySelector('.crm__header-2_1');
+const form = document.querySelector('.form');
+const totalPrice = document.querySelector('.crm__total-price');
+
+
+
 const cart = {
   items: [],
   totalPrice: `0`,

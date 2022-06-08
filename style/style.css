@@ -52,9 +52,12 @@
 CRM-ка
  */
 .window__crm {
-  display: block;
   position: absolute;
   z-index: 9;
+}
+
+.window__none {
+  display: block;
 }
 
 /*
