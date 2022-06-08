@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Форма</title>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<main>
+  <section class="window">
+    <div class="container">
+
+    <div class="window__crm">
+
+      <div class="window__footer window__exit">
+        <p class="window__text-footer">
+          Итоговая стоимость: <span>$ 900.00</span>
+        </p>
+      </div>
+
+      <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+        <h1 class="crm__start-world">
+          CRM
+        </h1>
+
+        <div class="crm__form">
+
+          <div class="crm__header">
+            <div class="crm__header-1">
+              <input class="crm__filter" type="button" name="filter" value="Фильтр">
+
+              <div class="crm__container-1">
+                <span class="crm__icon"><img src="img/search.svg"></span>
+                <input type="crm__search" id="search" placeholder="Поиск по наименованию и категории" />
+              </div>
+            </div>
+
+            <input class="window__add" type="submit" name="add" value="Добавить товар">
+          </div>
+
+          <ul class="crm__header-2">
+            <li class="crm__header-2_1">
+              ID
+            </li>
+            <li class="crm__header-2_2">
+              Наименование
+            </li>
+            <li class="crm__header-2_3">
+              Категория
+            </li>
+            <li class="crm__header-2_4">
+              ед/изм
+            </li>
+            <li class="crm__header-2_5">
+              количество
+            </li>
+            <li class="crm__header-2_6">
+              цена
+            </li>
+            <li class="crm__header-2_7">
+              ИТОГ
+            </li>
+          </ul>
+
+          <div class="crm__main-1">
+            <ul class="crm__main_1-blox">
+              <li class="crm__main-1_1">
+                246016548
+              </li>
+              <li class="crm__main-1_2">
+                Навигационная система Soundmax
+              </li>
+              <li class="crm__main-1_3">
+                Техника для дома
+              </li>
+              <li class="crm__main-1_4">
+                шт
+              </li>
+              <li class="crm__main-1_5">
+                5
+              </li>
+              <li class="crm__main-1_6">
+                $100
+              </li>
+              <li class="crm__main-1_7">
+                $500
+              </li>
+            </ul>
+
+            <ul class="crm__main_1-img">
+              <li class="crm__main-1_1-img">
+                <button class="crm__main-img">
+                  <img src="img/carbon_no-image.svg" alt="no">
+                </button>
+              </li>
+              <li class="crm__main-1_2-img">
+                <button class="crm__main-img">
+                  <img src="img/akar-icons_edit.svg" alt="no">
+                </button>
+              </li>
+              <li class="crm__main-1_3-img">
+                <button class="crm__main-img">
+                  <img src="img/ant-design_delete-outlined.svg" alt="no">
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="crm__main-1">
+            <ul class="crm__main_1-blox">
+              <li class="crm__main-1_1">
+                246016548
+              </li>
+              <li class="crm__main-1_2">
+                Навигационная система Soundmax
+              </li>
+              <li class="crm__main-1_3">
+                Техника для дома
+              </li>
+              <li class="crm__main-1_4">
+                шт
+              </li>
+              <li class="crm__main-1_5">
+                5
+              </li>
+              <li class="crm__main-1_6">
+                $100
+              </li>
+              <li class="crm__main-1_7">
+                $500
+              </li>
+            </ul>
+
+            <ul class="crm__main_1-img">
+              <li class="crm__main-1_1-img">
+                <button class="crm__main-img">
+                  <img src="img/ant-design_delete-outlined.svg" alt="no">
+                </button>
+              </li>
+              <li class="crm__main-1_2-img">
+                <button class="crm__main-img">
+                  <img src="img/akar-icons_edit.svg" alt="no">
+                </button>
+              </li>
+              <li class="crm__main-1_3-img">
+                <button class="crm__main-img">
+                  <img src="img/ant-design_delete-outlined.svg" alt="no">
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer">
+            <div class="footer__numb">
+              <p class="footer__text">
+                Показывать на странице: 10
+              </p>
+              <button class="footer__text-but">
+                <img src="img/down.svg" alt="down">
+              </button>
+            </div>
+
+
+            <p class="footer__pages">
+              1-10 of 276
+            </p>
+
+            <div class="footer__click">
+              <button class="footer__left">
+                <img src="img/left.svg" alt="left">
+              </button>
+              <button class="footer__right">
+                <img src="img/right.svg" alt="right">
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </form>
+    </div>
+    </div>
+
+    </section>
+  </main>
+
+
+  <div class="overlay">
+
+<div class="window__add-goods">
+  <div class="window__error">
+    <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
+    <img class="window__img-er" src="img/Xred.svg" alt="X">
+    <p class="window__text-er">
+      Что-то пошло не так
+    </p>
+  </div>
+
+  <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
+
+  <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+    <h1 class="window__start-world">
+      ДОБАВИТЬ ТОВАР
+    </h1>
+
+    <div class="window__form">
+      <label class="window__text window__name" >
+        <span>НАИМЕНОВАНИЕ</span>
+        <input class="window__boarder" type="text" name="name" required>
+      </label>
+
+      <label class="window__text window__type">
+        КАТЕГОРИЯ
+        <input class="window__boarder" type="text" name="category" required>
+      </label>
+
+      <label class="window__text window__unit">
+        ЕДИНИЦЫ ИЗМЕРЕНИЯ
+        <input class="window__boarder" type="text" name="unit" required>
+      </label>
+
+      <div class="window__discount">
+        <p class="window__text ">ДИСКОНТ</p>
+        <label class="window__checkbox-style window__block-discount ">
+          <input class="window__checkbox" type="checkbox" name="discount">
+        </label>
+
+        <label>
+          <input class="window__block-discount window__checkbox_number" type="number" name="discount" id="discount1">
+        </label>
+      </div>
+
+
+      <label class="window__text window__text-description window__description" >
+        ОПИСАНИЕ
+        <textarea class="window__boarder_description" name="description"></textarea>
+      </label>
+
+      <label class="window__text window__number">
+        КОЛИЧЕСТВО
+        <input class="window__boarder" type="number" name="quantity">
+      </label>
+
+      <label class="window__text window__price" >
+        ЦЕНА
+        <input class="window__boarder" type="number" name="price">
+      </label>
+
+      <label class="window__add-photo window__photo">
+        <input class="window__file" type="file" name="add" value="Добавить изображение">
+        Добавить изображение
+      </label>
+
+      <img class="window__new-photo" src="img/coffe-machine.png" alt="coffe">
+
+      <p class="window__error-text">
+        <span>Изображение не должно</span>
+        <span>превышать размер 1 Мб</span>
+      </p>
+
+    </div>
+
+    <div class="window__footer">
+      <p class="window__text-footer">
+        Итоговая стоимость: <span>$ 900.00</span>
+      </p>
+
+      <input class="window__add" type="submit" name="add" value="Добавить товар">
+    </div>
+  </form>
+</div>
+
+<div class="window__edit-goods">
+  <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
+
+  <div class="window__info">
+    <p class="window__info-text">
+      id: 201910241
+    </p>
+    <button class="window__info-img" type="button">
+      <img src="img/akar-icons.svg" alt="acar">
+    </button>
+  </div>
+
+  <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+    <h1 class="window__start-world">
+      Изменить ТОВАР
+    </h1>
+
+
+    <div class="window__form">
+      <label class="window__text window__name" >
+        <span>НАИМЕНОВАНИЕ</span>
+        <input class="window__boarder" type="text" name="name" required>
+      </label>
+
+      <label class="window__text window__type">
+        КАТЕГОРИЯ
+        <input class="window__boarder" type="text" name="category" required>
+      </label>
+
+      <label class="window__text window__unit">
+        ЕДИНИЦЫ ИЗМЕРЕНИЯ
+        <input class="window__boarder" type="text" name="unit" required>
+      </label>
+
+      <div class="window__discount">
+        <p class="window__text ">ДИСКОНТ</p>
+        <label class="window__checkbox-style window__block-discount ">
+          <input class="window__checkbox" type="checkbox" name="discount">
+        </label>
+
+        <label>
+          <input class="window__block-discount window__checkbox_number" type="number" name="discount" id="discount">
+        </label>
+      </div>
+
+
+      <label class="window__text window__text-description window__description" >
+        ОПИСАНИЕ
+        <textarea class="window__boarder_description" name="description"></textarea>
+      </label>
+
+      <label class="window__text window__number">
+        КОЛИЧЕСТВО
+        <input class="window__boarder" type="number" name="quantity">
+      </label>
+
+      <label class="window__text window__price" >
+        ЦЕНА
+        <input class="window__boarder" type="number" name="price">
+      </label>
+
+      <label class="window__add-photo window__photo">
+        <input class="window__file" type="file" name="add" value="Добавить изображение">
+        Добавить изображение
+      </label>
+
+    </div>
+
+    <div class="window__footer">
+      <p class="window__text-footer">
+        Итоговая стоимость: <span>$ 900.00</span>
+      </p>
+
+      <input class="window__add" type="submit" name="add" value="Добавить товар">
+    </div>
+  </form>
+</div>
+  </div>
+
+</body>
+</html>
