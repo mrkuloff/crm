@@ -1,10 +1,9 @@
 @import "../style/global_style.css";
 @import "../style/normalize.css";
 
-
 .overlay {
   position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
+  display: flex; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
   top: 0;
@@ -22,7 +21,7 @@
   padding: 32px 106px;
   background: #E5E5E5;
 
-  display: none;
+  display: block;
   position: absolute;
   z-index: 8000;
 
@@ -56,16 +55,12 @@ CRM-ка
   z-index: 9;
 }
 
-.window__none {
-  display: block;
-}
-
 /*
 ОШИБКА
  */
 
 .window__error {
-  display: block;
+  display: none;
 
   position: absolute;
   z-index: 1000;
@@ -97,7 +92,16 @@ CRM-ка
 
 .window__exit {
   float: right;
+  position: relative;
 }
+
+.window__id {
+  display: inline;
+  position: absolute;
+  top: 40px;
+  left: 596px;
+}
+
 
 .window__start-world {
   font-style: normal;

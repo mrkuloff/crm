@@ -1,10 +1,12 @@
 'use strict';
 
-const heading = document.querySelector('.crm__start-world');
-const filter = document.querySelector('.crm__filter');
-const id = document.querySelector('.crm__header-2_1');
-const form = document.querySelector('.form');
-const totalPrice = document.querySelector('.crm__total-price');
+const heading = document.querySelector('.window__start-world');
+const id = document.querySelector('.window__id');
+const exit = document.querySelector('.window__exit');
+const form = document.querySelector('.window__form');
+const discountButton = document.querySelector('.window__checkbox');
+const discountNumber = document.querySelector('.window__checkbox_number');
+const totalPrice = document.querySelector('.window__text-footer');
 
 
 
