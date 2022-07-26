@@ -44,6 +44,7 @@
             <input class="window__add" type="submit" name="add" value="Добавить товар">
           </div>
 
+          <!--
           <ul class="crm__header-2">
             <li class="crm__header-2_1">
               ID
@@ -155,6 +156,69 @@
               </li>
             </ul>
           </div>
+          -->
+
+          <div style="min-width: 1100px; overflow-x: auto">
+            <table style="border-collapse: collapse; margin: 0">
+              <thead>
+              <tr class="crm__table-header">
+                <th style="text-align: left; padding-left: 15px;min-width: 108px;">
+                  ID
+                </th>
+                <th style="text-align: left; min-width: 300px;">
+                  НАИМЕНОВАНИЕ
+                </th>
+                <th style="text-align: left; min-width: 175px;">
+                  КАТЕГОРИЯ
+                </th>
+                <th style="text-align: center; min-width: 67px;">
+                  ЕД/ИЗМ</th>
+                <th style="text-align: center; min-width: 91px;">
+                  КОЛИЧЕСТВО
+                </th>
+                <th style="text-align: right; min-width: 95px;">
+                  ЦЕНА
+                </th>
+                <th style="text-align: right; min-width: 95px;">
+                  ИТОГ
+                </th>
+                <th style="min-width: 165px;"></th>
+              </tr>
+              </thead>
+              <tbody>
+              <!--
+              <tr class="crm__table-row">
+                <td style="text-align: right; min-width: 93px">246016548</td>
+                <td style="min-width: 290px;">Навигационная система Soundmax</td>
+                <td style="min-width: 160px; text-align: left;">Техника для дома</td>
+                <td style="min-width: 52px; text-align: center;">шт</td>
+                <td style="min-width: 91px; text-align: center;">5</td>
+                <td style="min-width: 80px; text-align: right;">$100</td>
+                <td style="min-width: 80px; text-align: right;">$500</td>
+                <td>
+                  <ul class="crm__main_1-img">
+                  <li class="crm__main-1_1-img">
+                    <button class="crm__main-img">
+                      <img src="img/ant-design_delete-outlined.svg" alt="no">
+                    </button>
+                  </li>
+                  <li class="crm__main-1_2-img">
+                    <button class="crm__main-img">
+                      <img src="img/akar-icons_edit.svg" alt="no">
+                    </button>
+                  </li>
+                  <li class="crm__main-1_3-img">
+                    <button class="crm__main-img">
+                      <img src="img/ant-design_delete-outlined.svg" alt="no">
+                    </button>
+                  </li>
+                </ul>
+              </td>
+              </tr>
+              -->
+              </tbody>
+            </table>
+          </div>
 
           <div class="footer">
             <div class="footer__numb">
@@ -193,169 +257,164 @@
   </main>
 
 
-  <div class="overlay">
-
-<div class="window__add-goods">
-  <div class="window__error">
-    <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
-    <img class="window__img-er" src="img/Xred.svg" alt="X">
-    <p class="window__text-er">
-      Что-то пошло не так
-    </p>
-  </div>
-
-  <p class="window__id">1253</p>
-  <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
-
-  <form action="https://jsonplaceholder.typicode.com/posts" method="post">
-    <h1 class="window__start-world">
-      ДОБАВИТЬ ТОВАР
-    </h1>
-
-    <div class="window__form">
-      <label class="window__text window__name" >
-        <span>НАИМЕНОВАНИЕ</span>
-        <input class="window__boarder" type="text" name="name" required>
-      </label>
-
-      <label class="window__text window__type">
-        КАТЕГОРИЯ
-        <input class="window__boarder" type="text" name="category" required>
-      </label>
-
-      <label class="window__text window__unit">
-        ЕДИНИЦЫ ИЗМЕРЕНИЯ
-        <input class="window__boarder" type="text" name="unit" required>
-      </label>
-
-      <div class="window__discount">
-        <p class="window__text ">ДИСКОНТ</p>
-        <label class="window__checkbox-style window__block-discount ">
-          <input class="window__checkbox" type="checkbox" name="discount">
-        </label>
-
-        <label>
-          <input class="window__block-discount window__checkbox_number" type="number" name="discount" id="discount1">
-        </label>
+ <div class="overlay"><!-- active-->
+    <div class="window__add-goods">
+      <div class="window__error">
+        <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
+        <img class="window__img-er" src="img/Xred.svg" alt="X">
+        <p class="window__text-er">
+          Что-то пошло не так
+        </p>
       </div>
 
+      <p class="window__id">1253</p>
+      <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
 
-      <label class="window__text window__text-description window__description" >
-        ОПИСАНИЕ
-        <textarea class="window__boarder_description" name="description"></textarea>
-      </label>
+      <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+        <h1 class="window__start-world">
+          ДОБАВИТЬ ТОВАР
+        </h1>
 
-      <label class="window__text window__number">
-        КОЛИЧЕСТВО
-        <input class="window__boarder" type="number" name="quantity">
-      </label>
+        <div class="window__form">
+          <label class="window__text window__name" >
+            <span>НАИМЕНОВАНИЕ</span>
+            <input class="window__boarder" type="text" name="name" required>
+          </label>
 
-      <label class="window__text window__price" >
-        ЦЕНА
-        <input class="window__boarder" type="number" name="price">
-      </label>
+          <label class="window__text window__type">
+            КАТЕГОРИЯ
+            <input class="window__boarder" type="text" name="category" required>
+          </label>
 
-      <label class="window__add-photo window__photo">
-        <input class="window__file" type="file" name="add" value="Добавить изображение">
-        Добавить изображение
-      </label>
+          <label class="window__text window__unit">
+            ЕДИНИЦЫ ИЗМЕРЕНИЯ
+            <input class="window__boarder" type="text" name="unit" required>
+          </label>
 
-      <img class="window__new-photo" src="img/coffe-machine.png" alt="coffe">
+          <div class="window__discount">
+            <p class="window__text ">ДИСКОНТ</p>
+            <input type="checkbox" class="window__checkbox" id="checkbox1" name="discount">
+            <label for="checkbox1" class=""></label>
+            <label>
+              <input class="window__checkbox_number" type="number" name="discount" id="discount1">
+            </label>
+          </div>
 
-      <p class="window__error-text">
-        <span>Изображение не должно</span>
-        <span>превышать размер 1 Мб</span>
-      </p>
 
+          <label class="window__text window__text-description window__description" >
+            ОПИСАНИЕ
+            <textarea class="window__boarder_description" name="description"></textarea>
+          </label>
+
+          <label class="window__text window__number">
+            КОЛИЧЕСТВО
+            <input class="window__boarder" type="number" name="quantity">
+          </label>
+
+          <label class="window__text window__price" >
+            ЦЕНА
+            <input class="window__boarder" type="number" name="price">
+          </label>
+
+          <label class="window__add-photo window__photo">
+            <input class="window__file" type="file" name="add" value="Добавить изображение">
+            Добавить изображение
+          </label>
+
+          <img class="window__new-photo" src="img/coffe-machine.png" alt="coffe">
+
+          <p class="window__error-text">
+            <span>Изображение не должно</span>
+            <span>превышать размер 1 Мб</span>
+          </p>
+
+        </div>
+
+        <div class="window__footer">
+          <p class="window__text-footer">
+            Итоговая стоимость: <span>$ 900.00</span>
+          </p>
+
+          <input class="window__add" type="submit" name="add" value="Добавить товар">
+        </div>
+      </form>
     </div>
 
-    <div class="window__footer">
-      <p class="window__text-footer">
-        Итоговая стоимость: <span>$ 900.00</span>
-      </p>
+    <div class="window__edit-goods">
+      <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
 
-      <input class="window__add" type="submit" name="add" value="Добавить товар">
-    </div>
-  </form>
-</div>
-
-<div class="window__edit-goods">
-  <button class="window__exit" type="button"><img src="img/X.svg" alt="X"></button>
-
-  <div class="window__info">
-    <p class="window__info-text">
-      id: 201910241
-    </p>
-    <button class="window__info-img" type="button">
-      <img src="img/akar-icons.svg" alt="acar">
-    </button>
-  </div>
-
-  <form action="https://jsonplaceholder.typicode.com/posts" method="post">
-    <h1 class="window__start-world">
-      Изменить ТОВАР
-    </h1>
-
-
-    <div class="window__form">
-      <label class="window__text window__name" >
-        <span>НАИМЕНОВАНИЕ</span>
-        <input class="window__boarder" type="text" name="name" required>
-      </label>
-
-      <label class="window__text window__type">
-        КАТЕГОРИЯ
-        <input class="window__boarder" type="text" name="category" required>
-      </label>
-
-      <label class="window__text window__unit">
-        ЕДИНИЦЫ ИЗМЕРЕНИЯ
-        <input class="window__boarder" type="text" name="unit" required>
-      </label>
-
-      <div class="window__discount">
-        <p class="window__text ">ДИСКОНТ</p>
-        <label class="window__checkbox-style window__block-discount ">
-          <input class="window__checkbox" type="checkbox" name="discount">
-        </label>
-
-        <label>
-          <input class="window__block-discount window__checkbox_number" type="number" name="discount" id="discount">
-        </label>
+      <div class="window__info">
+        <p class="window__info-text">
+          id: 201910241
+        </p>
+        <button class="window__info-img" type="button">
+          <img src="img/akar-icons.svg" alt="acar">
+        </button>
       </div>
 
+      <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+        <h1 class="window__start-world">
+          Изменить ТОВАР
+        </h1>
 
-      <label class="window__text window__text-description window__description" >
-        ОПИСАНИЕ
-        <textarea class="window__boarder_description" name="description"></textarea>
-      </label>
 
-      <label class="window__text window__number">
-        КОЛИЧЕСТВО
-        <input class="window__boarder" type="number" name="quantity">
-      </label>
+        <div class="window__form">
+          <label class="window__text window__name" >
+            <span>НАИМЕНОВАНИЕ</span>
+            <input class="window__boarder" type="text" name="name" required>
+          </label>
 
-      <label class="window__text window__price" >
-        ЦЕНА
-        <input class="window__boarder" type="number" name="price">
-      </label>
+          <label class="window__text window__type">
+            КАТЕГОРИЯ
+            <input class="window__boarder" type="text" name="category" required>
+          </label>
 
-      <label class="window__add-photo window__photo">
-        <input class="window__file" type="file" name="add" value="Добавить изображение">
-        Добавить изображение
-      </label>
+          <label class="window__text window__unit">
+            ЕДИНИЦЫ ИЗМЕРЕНИЯ
+            <input class="window__boarder" type="text" name="unit" required>
+          </label>
 
+          <div class="window__discount">
+            <p class="window__text ">ДИСКОНТ</p>
+            <input type="checkbox" class="window__checkbox" id="checkbox2" name="discount">
+            <label for="checkbox2" class=""></label>
+            <label>
+              <input class="window__checkbox_number" type="number">
+            </label>
+          </div>
+
+
+          <label class="window__text window__text-description window__description" >
+            ОПИСАНИЕ
+            <textarea class="window__boarder_description" name="description"></textarea>
+          </label>
+
+          <label class="window__text window__number">
+            КОЛИЧЕСТВО
+            <input class="window__boarder" type="number" name="quantity">
+          </label>
+
+          <label class="window__text window__price" >
+            ЦЕНА
+            <input class="window__boarder" type="number" name="price">
+          </label>
+
+          <label class="window__add-photo window__photo">
+            <input class="window__file" type="file" name="add" value="Добавить изображение">
+            Добавить изображение
+          </label>
+
+        </div>
+
+        <div class="window__footer">
+          <p class="window__text-footer">
+            Итоговая стоимость: <span>$ 900.00</span>
+          </p>
+
+          <input class="window__add" type="submit" name="add" value="Добавить товар">
+        </div>
+      </form>
     </div>
-
-    <div class="window__footer">
-      <p class="window__text-footer">
-        Итоговая стоимость: <span>$ 900.00</span>
-      </p>
-
-      <input class="window__add" type="submit" name="add" value="Добавить товар">
-    </div>
-  </form>
-</div>
   </div>
 
 </body>
