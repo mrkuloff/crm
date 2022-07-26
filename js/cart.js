@@ -137,33 +137,33 @@ const createRow = (object) => {
     const [key, value] = object;
     if (key === 'id') {
       id.innerText = value;
-      id.style.cssText=
+      id.style.cssText =
         `text-align: right; min-width: 93px;`;
     } else if (key === 'title') {
       title.innerText = value;
-      title.style.cssText=
+      title.style.cssText =
         `min-width: 290px;`;
     } else if (key === 'price') {
       price.innerText = value;
-      price.style.cssText=
+      price.style.cssText =
         `min-width: 80px; text-align: right;`;
     } else if (key === 'category') {
       category.innerText = value;
-      category.style.cssText=
+      category.style.cssText =
         `min-width: 160px; text-align: left;`;
     } else if (key === 'units') {
       units.innerText = value;
-      units.style.cssText=
+      units.style.cssText =
         `min-width: 52px; text-align: center;`;
     } else if (key === 'count') {
       count.innerText = value;
-      count.style.cssText=
+      count.style.cssText =
         `min-width: 91px; text-align: center;`;
     }
   });
   if (price!=null && count!=null) {
     allPrice.innerText = price.innerText * count.innerText;
-    allPrice.style.cssText=
+    allPrice.style.cssText =
       `min-width: 80px; text-align: right;`;
   }
 
