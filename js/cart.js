@@ -67,7 +67,6 @@ const discountButton = document.querySelector('.window__checkbox');
 const discountNumber = document.querySelector('.window__checkbox_number');
 const totalPrice = document.querySelector('.window__text-footer');
 
-const overlay = document.querySelector('.overlay ');
 
 const cart = {
   items: [],
@@ -210,4 +209,23 @@ cart.print();
 
 renderGoods(goods);
 
+const btnAddGood = document.querySelector('.window__add-btn');
+const btnExit = document.querySelector('.window__exit-btn');
+const formAddGood = document.querySelector('.window__add-goods');
+const overlay = document.querySelector('.overlay');
 
+btnAddGood.addEventListener('click', () => {
+  overlay.classList.add('is-visible');
+});
+
+btnExit.addEventListener('click', () => {
+  overlay.classList.remove('is-visible');
+});
+
+formAddGood.addEventListener('click', event => {
+  event.stopImmediatePropagation();
+});
+
+overlay.addEventListener('click', () => {
+  overlay.classList.remove('is-visible');
+});

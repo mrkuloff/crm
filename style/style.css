@@ -2,8 +2,8 @@
 @import "../style/normalize.css";
 
 .overlay {
+  display: none;
   position: fixed; /* Sit on top of the page content */
-  display: none; /* Hidden by default */
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
   top: 0;
@@ -12,6 +12,12 @@
   bottom: 0;
   background-color: rgba(0,0,0,0.5); /* Black background with opacity */
   z-index: 7000; /* Specify a stack order in case you're using a different order for other elements */
+}
+
+.overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+  display: block;
 }
 
 .active {
@@ -97,6 +103,9 @@ CRM-ка
 .window__exit {
   float: right;
   position: relative;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 .window__id {
@@ -682,6 +691,9 @@ CRM
 .crm__main-img {
   width: 20px;
   height: 20px;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 .crm__main-1 {
@@ -709,6 +721,9 @@ CRM
 .footer__text-but {
   width: 15px;
   height: 15px;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 .footer__click {
@@ -720,6 +735,9 @@ CRM
 .footer__left , .footer__right {
   width: 15px;
   height: 15px;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
 }
 
 .footer {
