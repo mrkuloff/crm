@@ -120,6 +120,7 @@ const cart = {
 const createRow = (object) => {
   const table = document.querySelector('tbody');
   const list = document.createElement('tr');
+  list.classList.add('contact');
   table.append(list);
 
   const id = document.createElement('td');
@@ -178,21 +179,22 @@ const createRow = (object) => {
     '                  <ul class="crm__main_1-img">\n' +
     '                  <li class="crm__main-1_1-img">\n' +
     '                    <button class="crm__main-img">\n' +
-    '                      <img src="img/ant-design_delete-outlined.svg" alt="no">\n' +
+    '                      <img src="img/clarity_picture-line.svg" alt="edit img" type="button">\n' +
     '                    </button>\n' +
     '                  </li>\n' +
     '                  <li class="crm__main-1_2-img">\n' +
     '                    <button class="crm__main-img">\n' +
-    '                      <img src="img/akar-icons_edit.svg" alt="no">\n' +
+    '                      <img src="img/akar-icons_edit.svg" alt="no" type="button">\n' +
     '                    </button>\n' +
     '                  </li>\n' +
     '                  <li class="crm__main-1_3-img">\n' +
-    '                    <button class="crm__main-img">\n' +
+    '                    <button class="crm__main-img crm__main-del" type="button">\n' +
     '                      <img src="img/ant-design_delete-outlined.svg" alt="no">\n' +
     '                    </button>\n' +
     '                  </li>\n' +
     '                </ul>\n' +
     '              </td>')
+
 }
 
 const renderGoods = (goods) => {
@@ -210,22 +212,26 @@ cart.print();
 renderGoods(goods);
 
 const btnAddGood = document.querySelector('.window__add-btn');
-const btnExit = document.querySelector('.window__exit-btn');
-const formAddGood = document.querySelector('.window__add-goods');
-const overlay = document.querySelector('.overlay');
+const formOverlay = document.querySelector('.overlay');
+const listTable = document.querySelector('tbody');
 
 btnAddGood.addEventListener('click', () => {
-  overlay.classList.add('is-visible');
+  formOverlay.classList.add('is-visible');
 });
 
-btnExit.addEventListener('click', () => {
-  overlay.classList.remove('is-visible');
+formOverlay.addEventListener('click', e => {
+  const target = e.target;
+  if (target === formOverlay ||
+    target.closest('.window__exit-btn')) {
+    formOverlay.classList.remove('is-visible');
+  }
 });
 
-formAddGood.addEventListener('click', event => {
-  event.stopImmediatePropagation();
-});
 
-overlay.addEventListener('click', () => {
-  overlay.classList.remove('is-visible');
+listTable.addEventListener('click', e => {
+  const target = e.target;
+  if (target.closest('.crm__main-del')) {
+    target.closest('.contact').remove();
+  }
+  console.log(listTable);
 });
