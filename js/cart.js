@@ -1,5 +1,26 @@
 'use strict';
 
+const btnAddGood = document.querySelector('.window__add-btn');
+const formOverlay = document.querySelector('.overlay');
+const listTable = document.querySelector('tbody');
+const allProductSum = document.querySelector('.crm__total-price');
+
+const heading = document.querySelector('.window__start-world');
+const id = document.querySelector('.window__id');
+const exit = document.querySelector('.window__exit');
+const form = document.querySelector('.window__form');
+const totalPrice = document.querySelector('.window__text-footer');
+
+const productForm = document.querySelector('.window__form-main');
+const checkbox = productForm.querySelector(".window__checkbox_add-good");
+const addProduct = productForm.querySelector(".window__add-product");
+const checkboxNumber = productForm.querySelector('.window__checkbox_number-add-good');
+const productSum = formOverlay.querySelector('.window__text-prodsum');
+const productId = formOverlay.querySelector('.window__info-id');
+const buttonId = formOverlay.querySelector('.window__info-img');
+
+let discont;
+
 const goods = [
   {
     "id": 253842678,
@@ -59,62 +80,63 @@ const goods = [
   }
 ]
 
-const heading = document.querySelector('.window__start-world');
-const id = document.querySelector('.window__id');
-const exit = document.querySelector('.window__exit');
-const form = document.querySelector('.window__form');
-const discountButton = document.querySelector('.window__checkbox');
-const discountNumber = document.querySelector('.window__checkbox_number');
-const totalPrice = document.querySelector('.window__text-footer');
+checkbox.addEventListener("change", () => {
+  if (checkbox.checked) {
+    checkboxNumber.disabled = false;
+    checkboxNumber.focus();
+  } else {
+    checkboxNumber.disabled = true;
+    checkboxNumber.value = '';
+    discont = null;
+  }
+});
 
 
-const cart = {
-  items: [],
-  totalPrice: `0`,
-  count: `0`,
-  discount: `0`,
-
-  get toPrice() {
-    return this.calculateItemPrice();
-  },
-
-  set setDiscount(promocode) {
-    if (typeof promocode === 'string' && promocode === 'METHED') {
-      this.discount += 15;
-    } else if (typeof promocode === 'string' && promocode === 'NEWYEAR') {
-      this.discount += 10;
-    }
-  },
-
-  add(name, price, count) {
-    this.increaseCount(count);
-    this.calculateItemPrice();
-
-    const item = {name, price, count};
-
-    return this.items.push(item);
-  },
-
-  increaseCount(number) {
-    return this.count += number;
-  },
-
-  calculateItemPrice() {
-    const length = this.items.length;
-    const newCount = this.count;
-    return length * newCount - (this.discount / 100);
-  },
-
-  clear() {
-    return this.items.removeAllRanges();
-  },
-
-  print() {
-    const aboutItems = JSON.stringify(this.items);
-    console.log(`json: , ${aboutItems}`);
-    console.log(`totalPrice: , ${cart.toPrice}`);
-  },
+const addProductData = product => {
+  goods.push(product);
 };
+
+const setDiscount = (discont) => {
+  return discont ? (100 - discont) / 100 : 1;
+}
+
+const getTotal = (price, count, discont) => {
+  if (price <= 0 || count <= 0) {
+    return 0;
+  }
+  return price * count * setDiscount(discont);
+};
+
+const getTotalTable = (prices = []) => {
+  return prices.reduce(
+    (acc, { count, price, discont }) => acc + getTotal(price, count, discont),
+    0
+  )
+};
+
+const isNumber = (num) => {
+  return !isNaN(parseFloat(num)) && isFinite(num) ? + num : null
+};
+
+const newTotalSum = () => {
+  allProductSum.textContent = `$ ${getTotalTable(goods).toFixed(2)}`;
+};
+newTotalSum();
+
+productForm.addEventListener('change', () => {
+  const price = isNumber(productForm.querySelector('[name=price]').value);
+  const count = isNumber(productForm.querySelector('[name=count]').value);
+  const discont = isNumber(productForm.querySelector('[name=discont]').value);
+  if (discont >= 0) {
+    productSum.textContent = `$ ${getTotal(price, count, discont).toFixed(2)}`;
+    addProduct.disabled = false;
+    addProduct.style.background = "#6D5BD0";
+  } else if (discont < 0) {
+    productSum.textContent = `Скидка не может быть отрицательной!`;
+    addProduct.disabled = true;
+    addProduct.style.background = "gray";
+  }
+});
 
 //метод проходит по объекту и добавляет по нужному key нужные value в td
 const createRow = (object) => {
@@ -130,6 +152,7 @@ const createRow = (object) => {
   const units = document.createElement('td');
   const count = document.createElement('td');
   const allPrice = document.createElement('td');
+  let tempDiscont;
 
 
   list.classList.add('crm__table-row');
@@ -159,10 +182,14 @@ const createRow = (object) => {
       count.innerText = value;
       count.style.cssText =
         `min-width: 91px; text-align: center;`;
+    } else if (key === 'discont') {
+      if (isNumber(value)) {
+        tempDiscont = value;
+      }
     }
   });
   if (price!=null && count!=null) {
-    allPrice.innerText = price.innerText * count.innerText;
+    allPrice.innerText = getTotal(price.innerText,count.innerText,tempDiscont).toFixed(2);
     allPrice.style.cssText =
       `min-width: 80px; text-align: right;`;
   }
@@ -203,20 +230,12 @@ const renderGoods = (goods) => {
   }
 }
 
-cart.add('Масло', 80, 2);
-cart.add('Квас', 100, 3);
-cart.add('Хлем', 45, 1);
-cart.setDiscount = 'METHED';
-cart.print();
-
 renderGoods(goods);
 
-const btnAddGood = document.querySelector('.window__add-btn');
-const formOverlay = document.querySelector('.overlay');
-const listTable = document.querySelector('tbody');
 
 btnAddGood.addEventListener('click', () => {
   formOverlay.classList.add('is-visible');
+  productId.textContent = `${Date.now().toString().slice(4)}`;
 });
 
 formOverlay.addEventListener('click', e => {
@@ -224,6 +243,11 @@ formOverlay.addEventListener('click', e => {
   if (target === formOverlay ||
     target.closest('.window__exit-btn')) {
     formOverlay.classList.remove('is-visible');
+    discont = null;
+    checkboxNumber.disabled = true;
+    productSum.textContent = '$ 0.00';
+    productId.contentEditable = 'false';
+    productForm.reset();
   }
 });
 
@@ -231,7 +255,58 @@ formOverlay.addEventListener('click', e => {
 listTable.addEventListener('click', e => {
   const target = e.target;
   if (target.closest('.crm__main-del')) {
+    goods.splice([...document.querySelectorAll('.crm__main-del')].indexOf(e.target), 1);
     target.closest('.contact').remove();
+    newTotalSum();
   }
+  console.log(goods);
   console.log(listTable);
 });
+console.log(goods);
+console.log(listTable);
+
+buttonId.addEventListener('click', () => {
+  productId.contentEditable = 'true';
+  productId.focus();
+});
+
+const addProductPage = (object) => {
+  createRow(object);
+};
+
+const handleAddProduct = (e) => {
+  e.preventDefault()
+
+  const formData = new FormData(e.target);
+
+  const product = Object.fromEntries(formData);
+
+  product['id'] = productId.textContent;
+
+
+  if (!('discont' in product)) {
+    product.discont = false
+  }
+
+  console.log(product);
+  addProductData(product);
+  addProductPage(product);
+
+  newTotalSum();
+
+  formOverlay.classList.remove('is-visible');
+  checkboxNumber.disabled = true;
+  productSum.textContent = '$ 0.00';
+  productId.contentEditable = 'false';
+  productForm.reset();
+
+  console.log(goods)
+  console.log(listTable)
+};
+
+productForm.addEventListener('submit', handleAddProduct);
+
+
+
+
+

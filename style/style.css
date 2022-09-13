@@ -395,6 +395,10 @@ CRM-ка
 }
 
 .window__info-img {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+
   display: inline;
 
   margin-right: 25px;

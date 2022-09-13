@@ -20,7 +20,7 @@
 
       <div class="window__footer window__exit">
         <p class="window__text-footer">
-          Итоговая стоимость: <span class="crm__total-price">$ 900.00</span>
+          Итоговая стоимость: <span class="crm__total-price"></span>
         </p>
       </div>
 
@@ -126,7 +126,17 @@
 
       <button class="window__exit window__exit-btn" type="button"><img src="img/X.svg" alt="X"></button>
 
-      <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+      <form class="window__form-main" action="https://jsonplaceholder.typicode.com/posts" method="post">
+
+        <div class="window__info">
+          <p class="window__info-text">
+            ID: <span class="window__info-id"></span>
+          </p>
+          <button class="window__info-img" type="button">
+            <img src="img/akar-icons.svg" alt="acar">
+          </button>
+        </div>
+
         <h1 class="window__start-world">
           ДОБАВИТЬ ТОВАР
         </h1>
@@ -134,7 +144,7 @@
         <div class="window__form">
           <label class="window__text window__name" >
             <span>НАИМЕНОВАНИЕ</span>
-            <input class="window__boarder" type="text" name="name" required>
+            <input class="window__boarder" type="text" name="title" required>
           </label>
 
           <label class="window__text window__type">
@@ -144,15 +154,15 @@
 
           <label class="window__text window__unit">
             ЕДИНИЦЫ ИЗМЕРЕНИЯ
-            <input class="window__boarder" type="text" name="unit" required>
+            <input class="window__boarder" type="text" name="units" required>
           </label>
 
           <div class="window__discount">
             <p class="window__text ">ДИСКОНТ</p>
-            <input type="checkbox" class="window__checkbox" id="checkbox1" name="discount">
+            <input type="checkbox" class="window__checkbox window__checkbox_add-good" id="checkbox1">
             <label for="checkbox1" class=""></label>
             <label>
-              <input class="window__checkbox_number" type="number" name="discount" id="discount1">
+              <input class="window__checkbox_number window__checkbox_number-add-good" type="number" name="discont" id="discount1" disabled>
             </label>
           </div>
 
@@ -164,7 +174,7 @@
 
           <label class="window__text window__number">
             КОЛИЧЕСТВО
-            <input class="window__boarder" type="number" name="quantity">
+            <input class="window__boarder" type="number" name="count">
           </label>
 
           <label class="window__text window__price" >
@@ -173,7 +183,7 @@
           </label>
 
           <label class="window__add-photo window__photo">
-            <input class="window__file" type="file" name="add" value="Добавить изображение">
+            <input class="window__file" type="file" name="images" value="Добавить изображение">
             Добавить изображение
           </label>
 
@@ -188,10 +198,10 @@
 
         <div class="window__footer">
           <p class="window__text-footer">
-            Итоговая стоимость: <span>$ 900.00</span>
+            Итоговая стоимость: <span class="window__text-prodsum">$ 0.00</span>
           </p>
 
-          <input class="window__add" type="submit" name="add" value="Добавить товар">
+          <input class="window__add window__add-product" type="submit" name="add" value="Добавить товар">
         </div>
       </form>
     </div>
@@ -232,7 +242,7 @@
 
           <div class="window__discount">
             <p class="window__text ">ДИСКОНТ</p>
-            <input type="checkbox" class="window__checkbox" id="checkbox2" name="discount">
+            <input type="checkbox" class="window__checkbox" id="checkbox2" >
             <label for="checkbox2" class=""></label>
             <label>
               <input class="window__checkbox_number" type="number">
