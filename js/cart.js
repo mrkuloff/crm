@@ -256,6 +256,7 @@ listTable.addEventListener('click', e => {
   const target = e.target;
   if (target.closest('.crm__main-del')) {
     goods.splice([...document.querySelectorAll('.crm__main-del')].indexOf(e.target), 1);
+
     target.closest('.contact').remove();
     newTotalSum();
   }
