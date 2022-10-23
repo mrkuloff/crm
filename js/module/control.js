@@ -115,6 +115,17 @@ const controlProductForm = () => {
   productForm.addEventListener('submit', handleAddProduct);
 };
 
+const controlListItem = () => {
+  listTable.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    if (e.target.classList.contains('crm__main-show')) {
+      const element = e.target.closest('tr');
+      open(element.dataset.pic, 'about:blank', 'width=600, height=600, top=screen.height/2, left=screen.width/2');
+    }
+  });
+};
+
 const handleAddProduct = (e) => {
   e.preventDefault()
 
@@ -148,6 +159,7 @@ const handleAddProduct = (e) => {
 export {
   controlList,
   controlProductForm,
+  controlListItem,
   isNumber,
   newTotalSum,
   getTotal

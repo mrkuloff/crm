@@ -4,6 +4,7 @@ import {
   controlList,
   controlProductForm,
   newTotalSum,
+  controlListItem,
 } from './module/control.js';
 
 import {
@@ -17,6 +18,7 @@ const init = (goods) => {
 
   controlProductForm();
   controlList();
+  controlListItem();
 };
 
 init(goods);

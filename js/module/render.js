@@ -22,6 +22,7 @@ const createRow = (object) => {
 
 
   list.classList.add('crm__table-row');
+  list.setAttribute('data-pic', '../../img/coffe-machine.png');
   Object.entries(object).forEach((object) => {
     const [key, value] = object;
     if (key === 'id') {
@@ -72,17 +73,17 @@ const createRow = (object) => {
     '                  <ul class="crm__main_1-img">\n' +
     '                  <li class="crm__main-1_1-img">\n' +
     '                    <button class="crm__main-img">\n' +
-    '                      <img src="img/clarity_picture-line.svg" alt="edit img" type="button">\n' +
+    '                      <img class="crm__main-show" src="img/clarity_picture-line.svg" alt="show img">\n' +
     '                    </button>\n' +
     '                  </li>\n' +
     '                  <li class="crm__main-1_2-img">\n' +
     '                    <button class="crm__main-img">\n' +
-    '                      <img src="img/akar-icons_edit.svg" alt="no" type="button">\n' +
+    '                      <img src="img/akar-icons_edit.svg" alt="edit item" type="button">\n' +
     '                    </button>\n' +
     '                  </li>\n' +
     '                  <li class="crm__main-1_3-img">\n' +
     '                    <button class="crm__main-img crm__main-del" type="button">\n' +
-    '                      <img src="img/ant-design_delete-outlined.svg" alt="no">\n' +
+    '                      <img src="img/ant-design_delete-outlined.svg" alt="delete item">\n' +
     '                    </button>\n' +
     '                  </li>\n' +
     '                </ul>\n' +
